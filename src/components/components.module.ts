@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { ListeFrmSqlModeleComponent } from './liste-frm-sql-modele/liste-frm-sql-modele';
-import { TestCompComponent } from './test-comp/test-comp';
 import { ListeFrmLineComponent } from './liste-frm-line/liste-frm-line';
 import { TabFormComponent } from './tab-form/tab-form';
 import { TabRowComponent } from './tab-row/tab-row';
@@ -15,7 +14,6 @@ import { FileSelectorComponent } from './file-selector/file-selector';
 import { TextAreaComponent } from './text-area/text-area';
 @NgModule({
 	declarations: [ListeFrmSqlModeleComponent,
-    TestCompComponent,
     ListeFrmLineComponent,
     TabFormComponent,
     TabRowComponent,
@@ -32,7 +30,6 @@ import { TextAreaComponent } from './text-area/text-area';
     TextAreaComponent],
 	imports: [],
 	exports: [ListeFrmSqlModeleComponent,
-    TestCompComponent,
     ListeFrmLineComponent,
     TabFormComponent,
     TabRowComponent,

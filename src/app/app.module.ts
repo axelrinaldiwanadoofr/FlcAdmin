@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ListeUtilisateursPage } from '../pages/liste-utilisateurs/liste-utilisateurs' ;
 
 import { ListeFrmSqlModeleComponent } from '../components/liste-frm-sql-modele/liste-frm-sql-modele' ;
 import { ListeFrmLineComponent } from '../components/liste-frm-line/liste-frm-line' ;
@@ -40,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabBtNewComponent,
     TabLineSelectorComponent,
     FileSelectorComponent,
-    TextAreaComponent
+    TextAreaComponent,
+    ListeUtilisateursPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    ListeUtilisateursPage
   ],
   providers: [
     StatusBar,
@@ -68,6 +71,6 @@ export class AppModule
     //RemoteSqlProvider.setWebSqlApiUrl( "http://localhost/bd" ) ;
     
     // Specifie le nom de la base de donnée à consulter
-    RemoteSqlProvider.setWebDbNameAndId( "lcsalsacggroot", 1 ) ;
+    RemoteSqlProvider.setWebDbNameAndId( "lcsalsacggroot", 0 ) ;
   }
 }
