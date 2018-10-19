@@ -59,4 +59,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule 
+{
+  constructor()
+  {
+    // Specifie l'URL pour l'accès à la base de donnée 
+    RemoteSqlProvider.setWebSqlApiUrl( "http://www.lcs.alsace/flc/php" ) ;
+    //RemoteSqlProvider.setWebSqlApiUrl( "http://localhost/bd" ) ;
+    
+    // Specifie le nom de la base de donnée à consulter
+    RemoteSqlProvider.setWebDbNameAndId( "lcsalsacggroot", 1 ) ;
+  }
+}
