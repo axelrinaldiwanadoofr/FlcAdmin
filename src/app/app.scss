@@ -14,3 +14,30 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.lavbox 
+{   
+    display: table-row;
+}
+
+.lavbox:nth-child(odd) 
+{
+    background: #e5f1f4;
+}
+
+.lavbox:nth-child(even) 
+{
+    background: #f8fbfc;
+}
+
+.lavbox:hover 
+{
+    background: #ecfbd4;
+    cursor:pointer;
+}
+
+.lahbox 
+{
+    display: inline-block; 
+    padding: 0.5rem;
+}

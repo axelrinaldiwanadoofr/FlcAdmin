@@ -8,6 +8,8 @@ import { JetonDeConnectionProvider } from "../providers/jeton-de-connection/jeto
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ListeUtilisateursPage } from '../pages/liste-utilisateurs/liste-utilisateurs' ;
+import { ListeExposantsPage } from '../pages/liste-exposants/liste-exposants' ;
+
 
 @Component({
   templateUrl: 'app.html'
@@ -30,7 +32,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Accueil', component: HomePage, privilegeMin: 0 },
-      { title: 'Utilisateurs', component: ListeUtilisateursPage, privilegeMin: 20 }
+      { title: 'Utilisateurs', component: ListeUtilisateursPage, privilegeMin: 20 },
+      { title: 'Exposants', component: ListeExposantsPage, privilegeMin: 10 }
     ];
 
   }

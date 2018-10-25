@@ -6,6 +6,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ListeUtilisateursPage } from '../pages/liste-utilisateurs/liste-utilisateurs' ;
+import { FrmExposantPage } from '../pages/frm-exposant/frm-exposant' ;
+import { ListeExposantsPage } from '../pages/liste-exposants/liste-exposants' ;
 
 import { ListeFrmSqlModeleComponent } from '../components/liste-frm-sql-modele/liste-frm-sql-modele' ;
 import { ListeFrmLineComponent } from '../components/liste-frm-line/liste-frm-line' ;
@@ -43,7 +45,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabLineSelectorComponent,
     FileSelectorComponent,
     TextAreaComponent,
-    ListeUtilisateursPage
+    ListeUtilisateursPage,
+    FrmExposantPage,
+    ListeExposantsPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    ListeUtilisateursPage
+    ListeUtilisateursPage,
+    FrmExposantPage,
+    ListeExposantsPage
   ],
   providers: [
     StatusBar,

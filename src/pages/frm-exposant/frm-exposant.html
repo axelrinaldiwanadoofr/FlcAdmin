@@ -1,0 +1,58 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Mise à jour de l'exposant n° {{object.id}} {{object.nom}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div padding>
+    <div class="lavbox">
+      <div class="lahbox">
+        <label>Exposant:</label>
+        {{object.id}} {{object.nom}}
+      </div>
+    </div>
+    <ion-segment [(ngModel)]="onglet">
+      <ion-segment-button value="general">
+        Général
+      </ion-segment-button>
+      <ion-segment-button value="livres">
+        Livres
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="onglet">
+    <ion-card *ngSwitchCase="'general'">
+      <div class="lavbox">
+        <div class="lahbox">
+          <label>Nom:</label>
+          <input type="text" size=80 [(ngModel)]="object.nom">
+        </div>
+      </div>
+      <div class="lavbox">
+        <div class="lahbox">
+          <label>Lettre:</label>
+          <input type="text" [(ngModel)]="object.lettre">
+        </div>
+      </div>
+      <div class="lavbox">
+        <text-area [rows]=10 [cols]=60 [(text)]="object.description">
+        </text-area>
+      </div>
+      <div class="lavbox">
+        <div class="lahbox">
+          <button ion-button (click)="onCancel()">Annuler</button>
+          <button ion-button (click)="onSave()">Enregistrer</button>
+          <button ion-button (click)="onRemove()">Supprimer</button>
+        </div>
+      </div>
+    </ion-card>
+    <ion-card *ngSwitchCase="'livres'">
+      <!--<page-liste-livres [idExposant]="object.id"></page-liste-livre>-->
+    </ion-card>
+  </div>
+</ion-content>

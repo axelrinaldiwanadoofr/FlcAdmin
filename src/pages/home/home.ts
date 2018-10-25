@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { JetonDeConnectionProvider } from "../../providers/jeton-de-connection/jeton-de-connection" ; 
 import { ToastController } from 'ionic-angular';
 
+import { FrmExposantPage } from '../frm-exposant/frm-exposant' ;
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -38,6 +40,11 @@ export class HomePage
         duration: 3000
       }) ;
       toast.present() ;
+
+      if( this.jetonConnect.getIdExposant() )
+      {
+        this.navCtrl.push( FrmExposantPage, { pk: {id: this.jetonConnect.getIdExposant() } } ) ;
+      }
     }) ;
   }
 
