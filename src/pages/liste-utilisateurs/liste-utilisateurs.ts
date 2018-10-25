@@ -14,6 +14,8 @@ import { ToastController } from 'ionic-angular';
 })
 export class ListeUtilisateursPage extends ListeFrmSqlModelePage
 {
+  private exposants: Array<{id:number,nom:string}> ;
+
   constructor( 
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -21,10 +23,19 @@ export class ListeUtilisateursPage extends ListeFrmSqlModelePage
     public toastCtrl: ToastController) 
   {
     super( new MoUtilisateur(), navCtrl, navParams, sqlPrd, toastCtrl ) ;
+
+    this.exposants = [] ;
   }
 
   ngOnInit()
   {
     this.select( "SELECT * FROM UTILISATEURS_18 order by nom", [] ) ;
+
+    //let sql = "select id, nom from EXPOSANTS_18 " ;
+    //sql += " where id not in( select idExposant from UTILISATEURS_18)" ;
+
+    let sql = "select id, nom from EXPOSANTS_18 order by nom" ;
+
+    this.sqlPrd.select( sql, [], this.exposants ) ;
   }
 }

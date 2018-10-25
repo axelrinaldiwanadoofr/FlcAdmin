@@ -29,8 +29,8 @@
           <select [(ngModel)]="object.privilege">
             <option value="0">Inactif</option>
             <option value="1">Exposant</option>
-            <option value="2">Organisation</option>
-            <option value="3">Admin</option>
+            <option value="10">Organisation</option>
+            <option value="20">Admin</option>
           </select>
         </tab-cell>
         <tab-cell title="Compte">
@@ -38,7 +38,12 @@
         </tab-cell>
         <tab-cell title="Mot de passe">
           <input type="text" size=20 [(ngModel)]="object.mdp">
-      </tab-cell>
-    </tab-row>
+        </tab-cell>
+        <tab-cell title="Exposant">
+          <select [(ngModel)]="object.idExposant">
+            <option *ngFor="let e of exposants" value="{{e.id}}">{{e.id}} {{e.nom}}</option>
+          </select>
+        </tab-cell>
+      </tab-row>
     </tab-form>
 </ion-content>

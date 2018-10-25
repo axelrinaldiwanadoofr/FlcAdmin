@@ -9,16 +9,18 @@ export class MoUtilisateur extends MoSqlTable
   public nom: string ;
   public compte: string ;
   public mdp: string ;
-  public privilige: number ;
+  public privilege: number ;
+  public idExposant: number ;
 
   constructor( data: any = null ) 
   {
     super( (data)? data : {
         id:null, 
+        idExposant: null,
         nom: null,
         compte: null,
         mdp: null, 
-        privilige: 0 } ) ;
+        privilege: 0 } ) ;
   }
 
   public getTableName(): string
@@ -35,4 +37,14 @@ export class MoUtilisateur extends MoSqlTable
   {
     return new MoUtilisateur( data ) ;
   }
+
+  beforeInsert( sqlPrd: SqlPrd )
+  {
+    return sqlPrd.select( "select max(id) as maxId from " + this.getTableName(), [], null, 0, 99999).then( (results)=>
+    {
+        if( results.rows[0].maxId == "" ) this.id = 1 ;
+        else this.id = parseInt(results.rows[0].maxId) + 1 ;
+    }) ;
+  }
+
 }

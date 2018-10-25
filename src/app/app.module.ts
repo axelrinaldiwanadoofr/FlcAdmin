@@ -22,6 +22,7 @@ import { FileSelectorComponent } from '../components/file-selector/file-selector
 import { TextAreaComponent } from '../components/text-area/text-area' ;
 
 import { RemoteSqlProvider } from '../providers/remotesql/remotesql';
+import { JetonDeConnectionProvider } from '../providers/jeton-de-connection/jeton-de-connection' ;
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -59,6 +60,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     RemoteSqlProvider,
+    JetonDeConnectionProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

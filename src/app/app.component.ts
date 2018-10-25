@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { JetonDeConnectionProvider } from "../providers/jeton-de-connection/jeton-de-connection" ; 
+
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -15,15 +17,20 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, privilegeMin: number }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen,
+    public jetonConnection: JetonDeConnectionProvider ) 
+  {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Utilisateurs', component: ListeUtilisateursPage }
+      { title: 'Accueil', component: HomePage, privilegeMin: 0 },
+      { title: 'Utilisateurs', component: ListeUtilisateursPage, privilegeMin: 20 }
     ];
 
   }
