@@ -40,9 +40,7 @@
           <input type="text" size=20 [(ngModel)]="object.mdp">
         </tab-cell>
         <tab-cell title="Exposant">
-          <select [(ngModel)]="object.idExposant">
-            <option *ngFor="let e of exposants" value="{{e.id}}">{{e.id}} {{e.nom}}</option>
-          </select>
+          <input type="number" [(ngModel)]="object.idExposant">
         </tab-cell>
       </tab-row>
     </tab-form>
