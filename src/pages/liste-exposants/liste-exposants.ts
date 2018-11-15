@@ -34,7 +34,7 @@ export class ListeExposantsPage extends ListeSqlModelePage
 
   ngOnInit()
   {
-    this.select( "SELECT * FROM EXPOSANTS_18 order by nom", [] ) ;
+    this.select( "SELECT DISTINCT * FROM EXPOSANTS_18 order by nom", [] ) ;
   }
 
   onFiltre()
@@ -45,7 +45,7 @@ export class ListeExposantsPage extends ListeSqlModelePage
     if( this.rNom ) where += " and nom like '%" + this.rNom + "%'" ;
 
     this.liste = [] ;
-    this.select( "SELECT * FROM EXPOSANTS_18 " + where + " order by nom", [] ) ;
+    this.select( "SELECT DISTINCT * FROM EXPOSANTS_18 " + where + " order by nom", [] ) ;
   }
 
 }

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { JetonDeConnectionProvider } from "../../providers/jeton-de-connection/jeton-de-connection" ; 
 import { ToastController } from 'ionic-angular';
-
 import { FrmExposantPage } from '../frm-exposant/frm-exposant' ;
 
 @Component({
@@ -28,7 +27,7 @@ export class HomePage
     this.jetonConnect.connect( this.compte, this.mdp ).then( (result)=>
     {
       let message = "Compte ou mot de passe incorrect" ;
-      if( result > 0 ) message = "Connection réusie: " + this.jetonConnect.getNom() ;
+      if( result > 0 ) message = "Connection réussie: " + this.jetonConnect.getNom() ;
       else 
       {
         this.compte = null ;
@@ -47,5 +46,4 @@ export class HomePage
       }
     }) ;
   }
-
 }

@@ -51,8 +51,11 @@
         </div>
       </div>
     </ion-card>
+
     <ion-card *ngSwitchCase="'livres'">
-      <!--<page-liste-livres [idExposant]="object.id"></page-liste-livre>-->
+      <div padding>
+        <page-liste-livres [idExposant]="object.id"></page-liste-livres>
+      </div>
     </ion-card>
   </div>
 </ion-content>

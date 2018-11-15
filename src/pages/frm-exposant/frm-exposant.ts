@@ -21,7 +21,7 @@ export class FrmExposantPage extends FrmSqlModelePage
 {
 
   public onglet: string ;
-
+  public name:string;
   public object: MoExposant ;
 
 
@@ -33,6 +33,12 @@ export class FrmExposantPage extends FrmSqlModelePage
   {
     super( navCtrl, navParams, sqlPrd, toastCtrl, new MoExposant() ) ;
     this.onglet = "general" ;
+    this.name = NavParams.name;
   }
 
+
+  affichageLivres(name){
+    
+
+  }
 }

@@ -4,11 +4,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { JetonDeConnectionProvider } from "../providers/jeton-de-connection/jeton-de-connection" ; 
 
-
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ListeUtilisateursPage } from '../pages/liste-utilisateurs/liste-utilisateurs' ;
 import { ListeExposantsPage } from '../pages/liste-exposants/liste-exposants' ;
+import { SaisieLivrePage } from '../pages/saisie-livre/saisie-livre';
 
 
 @Component({

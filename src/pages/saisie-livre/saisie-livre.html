@@ -1,0 +1,22 @@
+<p>{{idExposant}}</p>
+<ion-list>
+  <ion-item>
+    <ion-label color="primary">Titre du livre:</ion-label>
+    <ion-input [(ngModel)]="object.titre">{{leTitre}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">Auteur du livre:</ion-label>
+    <ion-input [(ngModel)]="object.auteur">{{leAuteur}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">Editeur du livre:</ion-label>
+    <ion-input [(ngModel)]="object.editeur">{{leEditeur}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary"> Résumé du livre: </ion-label>
+    <ion-textarea rows="1" id="input-enResume" [(ngModel)]="object.enResume">{{leResume}}</ion-textarea>
+  </ion-item>
+</ion-list>
+<button ion-button (click)="onCancel()">Annuler</button>
+<button ion-button (click)="onSave()">Enregistrer</button>
+<button ion-button (click)="onRemove()">Supprimer</button>
