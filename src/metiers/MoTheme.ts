@@ -2,31 +2,23 @@ import {MoSqlTable } from '../tools/MoSqlTable' ;
 import {SqlPrd, SqlPrdAnswer} from '../providers/remotesql/sqlprd' ;
 
 
-export class MoLivre extends MoSqlTable
+export class MoTheme extends MoSqlTable
 {
 
-  public id: number ;
-  public titre: string ;
-  public enResume: string ;
-  public auteur: string ;
-  public editeur: string ;
-  public idExposant:number ;
-  public idTrangeAge: number ;
-
+  public id:        number;
+  public libelle:   string;
+  public lettre:    string;
   constructor( data: any = null ) 
   {
     super( (data)? data : {
-        id:null, 
-        titre: null,
-        enResume: null,
-        editeur: null,
-        auteur: null,
-        idExposant:null } ) ;
+        id:null,
+        libelle:null,
+        lettre: null } ) ;
   }
 
   public getTableName(): string
   {
-    return "livre_18" ; 
+    return "theme_18" ; 
   }
 
   public getPk(): Array<string>
@@ -34,9 +26,9 @@ export class MoLivre extends MoSqlTable
     return ["id"] ; 
   }
 
-  public clone( data: any = null ): MoLivre
+  public clone( data: any = null ): MoTheme
   {
-    return new MoLivre( data ) ;
+    return new MoTheme( data ) ;
   }
 
   beforeInsert( sqlPrd: SqlPrd )
