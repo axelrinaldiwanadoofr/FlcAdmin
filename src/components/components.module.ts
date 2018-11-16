@@ -12,6 +12,8 @@ import { TabBtRemoveComponent } from './tab-bt-remove/tab-bt-remove';
 import { TabBtNewComponent } from './tab-bt-new/tab-bt-new';
 import { FileSelectorComponent } from './file-selector/file-selector';
 import { TextAreaComponent } from './text-area/text-area';
+import { UploadImage } from './upload-image/upload-image' ;
+
 @NgModule({
 	declarations: [ListeFrmSqlModeleComponent,
     ListeFrmLineComponent,
@@ -27,7 +29,8 @@ import { TextAreaComponent } from './text-area/text-area';
     TabBtRemoveComponent,
     TabBtNewComponent,
     FileSelectorComponent,
-    TextAreaComponent],
+    TextAreaComponent,
+    UploadImage],
 	imports: [],
 	exports: [ListeFrmSqlModeleComponent,
     ListeFrmLineComponent,
@@ -43,6 +46,7 @@ import { TextAreaComponent } from './text-area/text-area';
     TabBtRemoveComponent,
     TabBtNewComponent,
     FileSelectorComponent,
+    UploadImage,
     TextAreaComponent]
 })
 export class ComponentsModule {}

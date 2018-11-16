@@ -24,6 +24,7 @@ import { TabColHeaderComponent } from '../components/tab-col-header/tab-col-head
 import { TabLineSelectorComponent } from '../components/tab-line-selector/tab-line-selector' ;
 import { FileSelectorComponent } from '../components/file-selector/file-selector' ;
 import { TextAreaComponent } from '../components/text-area/text-area' ;
+import { UploadImage } from '../components/upload-image/upload-image' ;
 
 import { RemoteSqlProvider } from '../providers/remotesql/remotesql';
 import { JetonDeConnectionProvider } from '../providers/jeton-de-connection/jeton-de-connection' ;
@@ -47,6 +48,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabLineSelectorComponent,
     FileSelectorComponent,
     TextAreaComponent,
+    UploadImage,
     ListeUtilisateursPage,
     FrmExposantPage,
     ListeExposantsPage,
