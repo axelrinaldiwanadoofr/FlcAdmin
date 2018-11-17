@@ -12,6 +12,8 @@ export class MoLivre extends MoSqlTable
   public editeur: string ;
   public idExposant:number ;
   public idTrangeAge: number ;
+  public image: string ;
+  public commentaire: string ;
 
   constructor( data: any = null ) 
   {
@@ -21,6 +23,8 @@ export class MoLivre extends MoSqlTable
         enResume: null,
         editeur: null,
         auteur: null,
+        image: null,
+        commentaire: null,
         idExposant:null } ) ;
   }
 

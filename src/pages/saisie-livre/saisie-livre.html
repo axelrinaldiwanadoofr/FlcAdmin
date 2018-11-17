@@ -12,8 +12,23 @@
     <ion-input [(ngModel)]="object.editeur">{{leEditeur}}</ion-input>
   </ion-item>
   <ion-item>
-    <ion-label color="primary"> Résumé du livre: </ion-label>
+    <ion-label color="primary">Commentaire: </ion-label>
+    <ion-textarea rows="5" [(ngModel)]="object.commentaire" (input)="change()">{{leResume}}</ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">Résumé du livre: </ion-label>
     <ion-textarea rows="5" id="input-enResume" [(ngModel)]="object.enResume" (input)="change()">{{leResume}}</ion-textarea>
+  </ion-item>
+  <ion-item>
+    <upload-image 
+      [show-size-list]="'false'" 
+      [(imageUrl)]="object.image"
+      [uploadSrvUrl]="'http://www.lcs.alsace/flc/php/'"
+      [imageSize]=300
+      [imageDirectory]="'../images'"></upload-image>
+    <p *ngIf="object.image">
+      <img src={{object.image}}>
+    </p>  
   </ion-item>
 </ion-list>
 <button ion-button (click)="onCancel()">Annuler</button>

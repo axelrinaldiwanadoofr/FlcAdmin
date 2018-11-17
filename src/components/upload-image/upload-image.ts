@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'upload-image',
-  template: "Load image:<input type='file'" +  
+  template: "<input type='file'" +  
     " multiple (change)='onFileInputChange( $event )' >" +
     "<div *ngIf='showSizeList==\"true\"'>Taille:" + 
     "<select [(ngModel)]='imageSize'> " +

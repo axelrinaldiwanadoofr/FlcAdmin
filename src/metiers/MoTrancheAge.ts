@@ -5,7 +5,9 @@ import {SqlPrd, SqlPrdAnswer} from '../providers/remotesql/sqlprd' ;
 export class MoTrancheAge extends MoSqlTable
 {
 
-  public id, ageMin, ageMax:    number;
+  public id:    number;
+  public ageMin:    number;
+  public ageMax:    number;
   public libelle:   string;
   constructor( data: any = null ) 
   {
