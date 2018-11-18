@@ -40,9 +40,20 @@
         </div>
       </div>
       <div class="lavbox">
-        <text-area [rows]=10 [cols]=60 [(text)]="object.description">
-        </text-area>
+        <ion-textarea rows="5" [(ngModel)]="object.description">{{description}}</ion-textarea>
       </div>
+      <div class="lavbox">
+        <upload-image 
+          [show-size-list]="'false'" 
+          [(imageUrl)]="object.image"
+          [uploadSrvUrl]="'http://www.lcs.alsace/flc/php/'"
+          [imageSize]=300
+          [imageDirectory]="'../images'"></upload-image>
+        <p *ngIf="object.image">
+          <img src={{object.image}}>
+        </p>  
+      </div>
+  
       <div class="lavbox">
         <div class="lahbox">
           <button ion-button (click)="onCancel()">Annuler</button>

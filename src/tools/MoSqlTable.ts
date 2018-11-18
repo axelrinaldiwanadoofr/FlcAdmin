@@ -100,6 +100,7 @@ export class MoSqlTable extends Modele
           }
         }
       }
+      this.resetState() ;
       return this ;
     }) ;
   }

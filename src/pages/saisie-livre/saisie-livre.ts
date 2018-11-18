@@ -21,6 +21,8 @@ export class SaisieLivrePage extends FrmSqlModelePage
     @Input() private idExposant:    number ;
 
     public object:    MoLivre;
+    public tranchesAge: Array<{id: number, libelle: string}> ;
+    public themes: Array<{id: number, libelle: string}> ;
 
     constructor(
         public navCtrl: NavController,
@@ -30,23 +32,10 @@ export class SaisieLivrePage extends FrmSqlModelePage
         {
             super( navCtrl, navParams, sqlPrd, toastCtrl, new MoLivre() )
 
-    }
-    change() {
-    // recupère les elements
-    var element   = document.getElementById('input-enResume');
-    var textarea  = element.getElementsByTagName('textarea')[0];
+            this.tranchesAge = [] ;
+            this.sqlPrd.select( "select id, libelle from trancheage_18 order by id", [], this.tranchesAge ) ;        
 
-    //met par défaut un style pour le textarea
-    textarea.style.minHeight  = '0';
-    textarea.style.height     = '0';
-    // limite la taille à 176 pixels (11 lignes de texte)
-    var scroll_height = textarea.scrollHeight;
-    if(scroll_height > 176)
-      scroll_height = 176;
-
-    // applique le nouveau style
-    element.style.height      = scroll_height + "px";
-    textarea.style.minHeight  = scroll_height + "px";
-    textarea.style.height     = scroll_height + "px";
-    }
+            this.themes = [] ;
+            this.sqlPrd.select( "select id, libelle from theme_18 order by libelle", [], this.themes ) ;        
+        }
 }

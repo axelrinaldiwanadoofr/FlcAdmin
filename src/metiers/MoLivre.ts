@@ -25,6 +25,7 @@ export class MoLivre extends MoSqlTable
         auteur: null,
         image: null,
         commentaire: null,
+        idTrancheAge: null,
         idExposant:null } ) ;
   }
 

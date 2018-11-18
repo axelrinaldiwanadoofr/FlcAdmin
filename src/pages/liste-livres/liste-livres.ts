@@ -26,7 +26,7 @@ export class ListeLivresPage extends ListeSqlModelePage
 
     ngOnInit()
     {   
-            let select = "SELECT * FROM livre_18 WHERE idExposant =" + this.idExposant ;
+            let select = "SELECT * FROM livre_18 WHERE idExposant =" + this.idExposant + " order by titre" ;
 
             this.select( select, [] ) ;
     }

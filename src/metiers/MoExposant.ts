@@ -9,6 +9,7 @@ export class MoExposant extends MoSqlTable
   public nom: string ;
   public lettre: string ;
   public description: string ;
+  public image: string ;
 
   constructor( data: any = null ) 
   {
@@ -16,6 +17,7 @@ export class MoExposant extends MoSqlTable
         id:null, 
         nom: null,
         lettre: null,
+        image: null,
         description: null } ) ;
   }
 

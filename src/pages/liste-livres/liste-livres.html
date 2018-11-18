@@ -3,14 +3,14 @@
 </ion-buttons>  
 
 <ion-list>
-    <ion-item-sliding> <!-- afficher tous les livres du même auteur -->
     <ion-item *ngFor="let livre of liste" (click)="onSelectItem($event, livre)">
-        <h2>{{livre.titre}}</h2><br>
-        <h3>Écrit par {{livre.auteur}}</h3> 
-        <h3>Édité par {{livre.editeur}} </h3>
-        <hr>
-    </ion-item>
-    </ion-item-sliding>
+        <ion-thumbnail item-start *ngIf="livre.image">
+          <img src={{livre.image}}>
+        </ion-thumbnail>
+        <h2>{{livre.titre}}</h2>
+        <p>Écrit par {{livre.auteur}}</p>
+        <p>Édité par {{livre.editeur}}</p>
+      </ion-item>    
 </ion-list>
 
 

@@ -23,6 +23,7 @@ export class FrmExposantPage extends FrmSqlModelePage
   public onglet: string ;
   public name:string;
   public object: MoExposant ;
+  public tranchesAge: Array<{id: number, libelle: string}> ;
 
 
   constructor(
@@ -34,11 +35,8 @@ export class FrmExposantPage extends FrmSqlModelePage
     super( navCtrl, navParams, sqlPrd, toastCtrl, new MoExposant() ) ;
     this.onglet = "general" ;
     this.name = NavParams.name;
-  }
 
-
-  affichageLivres(name){
-    
-
+    this.tranchesAge = [] ;
+    this.sqlPrd.select( "select id, libelle from trancheage_18 order by id", [], this.tranchesAge ) ;
   }
 }
