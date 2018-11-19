@@ -33,7 +33,8 @@ export class MyApp {
     this.pages = [
       { title: 'Accueil', component: HomePage, privilegeMin: 0 },
       { title: 'Utilisateurs', component: ListeUtilisateursPage, privilegeMin: 20 },
-      { title: 'Exposants', component: ListeExposantsPage, privilegeMin: 10 }
+      { title: 'Exposants', component: ListeExposantsPage, privilegeMin: 10 },
+      { title:'Rendez-vous', component:ListeRDVPage, privilegeMin:10 }
     ];
 
   }
