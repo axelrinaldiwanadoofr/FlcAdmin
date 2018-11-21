@@ -23,7 +23,7 @@ export class MoExposant extends MoSqlTable
 
   public getTableName(): string
   {
-    return "EXPOSANTS_18" ; 
+    return "exposant_18" ; 
   }
 
   public getPk(): Array<string>
