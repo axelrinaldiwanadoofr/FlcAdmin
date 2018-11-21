@@ -9,6 +9,8 @@ import { ListPage } from '../pages/list/list';
 import { ListeUtilisateursPage } from '../pages/liste-utilisateurs/liste-utilisateurs' ;
 import { ListeExposantsPage } from '../pages/liste-exposants/liste-exposants' ;
 import { SaisieLivrePage } from '../pages/saisie-livre/saisie-livre';
+import { ListeRDVPage } from '../pages/ListeRDV/ListeRDV';
+
 
 
 @Component({

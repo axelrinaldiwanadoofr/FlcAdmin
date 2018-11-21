@@ -12,6 +12,7 @@ import { ListeExposantsPage } from '../pages/liste-exposants/liste-exposants' ;
 import { SaisieLivrePage } from '../pages/saisie-livre/saisie-livre';
 import { ListeLivresPage } from '../pages/liste-livres/liste-livres' ;
 import { ListeRDVPage } from '../pages/ListeRDV/ListeRDV';
+import { SaisieRDVPage } from '../pages/saisie-RDV/saisieRDV';
 
 import { ListeFrmSqlModeleComponent } from '../components/liste-frm-sql-modele/liste-frm-sql-modele' ;
 import { ListeFrmLineComponent } from '../components/liste-frm-line/liste-frm-line' ;
@@ -56,7 +57,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListeExposantsPage,
     SaisieLivrePage,
     ListeLivresPage,
-    ListeRDVPage
+    ListeRDVPage,
+    SaisieRDVPage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListeExposantsPage,
     SaisieLivrePage,
     ListeLivresPage,
-    ListeRDVPage
+    ListeRDVPage,
+    SaisieRDVPage
   ],
   providers: [
     StatusBar,

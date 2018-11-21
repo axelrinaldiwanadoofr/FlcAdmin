@@ -3,37 +3,39 @@
       <ion-icon name="menu"></ion-icon>
     </button>  
   <ion-navbar>
-    <ion-title>Liste de vos rendez-vous</ion-title>
+    <ion-title>Liste des rendez-vous</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <button ion-button icon-only (click)="onNewItem()">
-      <ion-icon name="add"></ion-icon>
-    </button>
-    <tab-form title="Liste de vos rendez-vous">
-      <tab-row *ngFor="let object of liste">
-        <tab-line-selector>
-          <tab-bt-save [object]="object"></tab-bt-save>
-          <tab-bt-cancel [object]="object"></tab-bt-cancel>
-          <tab-bt-remove title="Supprimer" [object]="object" [liste]="liste"></tab-bt-remove>
-        </tab-line-selector>
-        <tab-cell title="id">{{object.id}}</tab-cell>
-        <tab-cell title="Nom">
-          <input type="text" size=30 [(ngModel)]="object.nom">
-        </tab-cell>
-        <tab-cell title="Nombre de places">
-            <input type="number" size=5 [(ngModel)]="object.nbPlacesMax">
-        </tab-cell>
-        <tab-cell title="Jour">
-          <input type="text" size=9 [(ngModel)]="object.jour">
-        </tab-cell>
-        <tab-cell title="Durée">
-          <input type="number" [(ngModel)]="object.duree">
-        </tab-cell>
-        <tab-cell title="Heure">
-          <input type="string" [(ngModel)]="object.heure">
-        </tab-cell>
-      </tab-row>
-    </tab-form>
+   <ion-card>
+    <div class="lavbox">
+      <div class="lahbox">
+        <label>Recherche par numéro de stand:</label>
+        <input type="text" [(ngModel)]="rId" placeholder="n° du stand" (change)="onFiltre()"/>      
+      </div>
+      <div class="lahbox">
+        <label>Recherche par nom de rendez-vous:</label>
+        <input type="text" [(ngModel)]="rNom" placeholder="Nom du rdv" (change)="onFiltre()"/>      
+      </div>
+    </div>
+    <div class="lavbox">
+      <div class="lahbox">
+          <button ion-button item-end (click)="onFiltre()">Filtrer</button>
+      </div>
+    </div>
+  </ion-card>
+  <ion-buttons end>
+    <button ion-button icon-only (click)="onNewItem()"><ion-icon name="add"  ></ion-icon></button>
+  </ion-buttons>  
+  <ion-list>
+    <ion-item *ngFor="let rdv of liste" (click)="onSelectItem($event, rdv)">
+         <h2>{{rdv.nom}}</h2>
+         <p>Se trouve au stand {{rdv.idStand}}</p>
+         <p>Le {{rdv.jour}}</p>
+         <p>à partir de {{rdv.heure}}</p>
+         <p>pendant {{rdv.duree}} minutes</p>
+         <p>pour la tranche d'âge: {{rdv.idTrancheAge}}</p>
+      </ion-item>    
+    </ion-list>
 </ion-content>

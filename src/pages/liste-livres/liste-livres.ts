@@ -1,7 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { JetonDeConnectionProvider } from "../../providers/jeton-de-connection/jeton-de-connection" ; 
-import { ToastController } from 'ionic-angular';
+import { IonicPage ,NavController, NavParams } from 'ionic-angular';
 import { RemoteSqlProvider } from '../../providers/remotesql/remotesql'; 
 import { ListeSqlModelePage } from '../../tools/liste-sql-modele' ;
 import { MoLivre } from '../../metiers/MoLivre' ;

@@ -1,11 +1,9 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>Mise à jour du livre n° {{object.id}} {{object.titre}}</ion-title>
   </ion-navbar>
-
 </ion-header>
-
+ 
 
 <ion-content padding>
   <ion-list>
@@ -28,7 +26,7 @@
           {{t.libelle}}
         </ion-option>
       </ion-select>
-    </ion-item>
+    </ion-item> 
     <ion-item>
       <ion-label color="primary">Thème:</ion-label>
       <ion-select [(ngModel)]="object.idTheme">
@@ -58,6 +56,6 @@
     </ion-item>
   </ion-list>
   <button ion-button (click)="onCancel()">Annuler</button>
-  <button ion-button (click)="onSave()">Enregistrer</button>
-  <button ion-button (click)="onRemove()">Supprimer</button>
+  <button ion-button color="secondary" (click)="onSave()">Enregistrer</button>
+  <button ion-button color="danger" (click)="onRemove()">Supprimer</button>
 </ion-content>
