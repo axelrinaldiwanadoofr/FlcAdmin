@@ -33,6 +33,7 @@ export class MoTrancheAge extends MoSqlTable
     return new MoTrancheAge( data ) ;
   }
 
+  // gère automatiquement l'insertion des objets dans la base de données
   beforeInsert( sqlPrd: SqlPrd )
   {
     return sqlPrd.select( "select max(id) as maxId from " + this.getTableName(), [], null, 0, 99999).then( (results)=>

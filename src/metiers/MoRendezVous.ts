@@ -3,7 +3,7 @@ import {SqlPrd, SqlPrdAnswer} from '../providers/remotesql/sqlprd' ;
 
 export class MoRendezVous extends MoSqlTable
 {
-
+  // ce modele permet de gerer les objets Mo. Tous les Mo quelque chose sont des copiés collés
   public id: number ;
   public nom: string ;
   public nbPlacesMax:number ;
@@ -37,6 +37,7 @@ export class MoRendezVous extends MoSqlTable
     return new MoRendezVous( data ) ;
   }
 
+  // gère automatiquement l'insertion des objets dans la base de données
   beforeInsert( sqlPrd: SqlPrd )
   {
     return sqlPrd.select( "select max(id) as maxId from " + this.getTableName(), [], null, 0, 99999).then( (results)=>
