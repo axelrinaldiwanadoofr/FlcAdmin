@@ -6,10 +6,6 @@ import { FrmExposantPage } from '../frm-exposant/frm-exposant' ;
 import { ListeSqlModelePage } from '../../tools/liste-sql-modele' ;
 
 /**
- * Generated class for the ListeEquipementsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
  */
 
 @IonicPage()
@@ -17,8 +13,8 @@ import { ListeSqlModelePage } from '../../tools/liste-sql-modele' ;
   selector: 'page-liste-exposants',
   templateUrl: 'liste-exposants.html',
 })
-export class ListeExposantsPage extends ListeSqlModelePage
-{
+export class ListeExposantsPage extends ListeSqlModelePage 
+{ // la classe mère ListSqlModelPage possède plein de fonctions qui permettent de manipuler les variables ici pour remplir les tableaux
   private rId: number ;
   private rNom: string ;
 
@@ -36,7 +32,7 @@ export class ListeExposantsPage extends ListeSqlModelePage
   {
     this.select( "SELECT DISTINCT * FROM exposant_18 order by nom", [] ) ;
   }
-
+// permet de filtrer la recherche
   onFiltre()
   {
     let where = "where 1=1" ;

@@ -33,21 +33,18 @@ export class ListeRDVPage extends ListeSqlModelePage
     this.rdv = [] ;
     this.lesPersonnes=[];
   }
+
+
   ngOnInit()
   {
-    /*this.select("SELECT * FROM participer_18 order by idPersonne",[]);
-    let lesPersonnes = "select id "; */
-
-
     this.select( "SELECT DISTINCT * FROM rdv_18 order by id", [] ) ;
-
-    //let sql = "select id, nom from EXPOSANTS_18 " ;
-    //sql += " where id not in( select idExposant from UTILISATEURS_18)" ;
 
     let sql = "select DISTINCT r.id, r.nom, r.nbMaxPlace, r.jour, r.duree, r.heure from rdv_18 r order by r.id" ;
 
     this.sqlPrd.select( sql, [], this.rdv );
   }
+
+  //Applique le filtre selon l'option selectionnée
   onFiltre()
   {
     let where = "where 1=1" ;

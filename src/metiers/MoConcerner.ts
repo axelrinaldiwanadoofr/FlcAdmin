@@ -5,7 +5,7 @@ export class MoConcerner extends MoSqlTable
 {
   public idLivre: number;
   public idTheme: number;
-
+// ce modele permet de gerer les objets Mo. Tous les Mo quelque chose sont des copiés collés
   constructor( data: any = null ) 
   {
     super( (data)? data : {
@@ -27,7 +27,7 @@ export class MoConcerner extends MoSqlTable
   {
     return new MoConcerner( data ) ;
   }
-
+// gère automatiquement l'insertion des objets dans la base de données
   beforeInsert( sqlPrd: SqlPrd )
   {
     return sqlPrd.select( "select max(id) as maxId from " + this.getTableName(), [], null, 0, 99999).then( (results)=>
@@ -35,9 +35,5 @@ export class MoConcerner extends MoSqlTable
         if( results.rows[0].maxId == "" ) this.idLivre = 1 ;
         else this.idLivre = parseInt(results.rows[0].maxId) + 1 ;
     }) ;
-  }
-
-  getFk(){
-    return this.idTheme;
   }
 }

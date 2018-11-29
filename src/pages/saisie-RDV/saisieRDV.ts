@@ -19,7 +19,7 @@ export class SaisieRDVPage extends FrmSqlModelePage
     @Input() private idExposant: number ;
 
     public object: MoRendezVous;
-
+    // permet la création d'une saisie de RDV
     constructor(
         public navCtrl: NavController,
         public navParams: NavParams,

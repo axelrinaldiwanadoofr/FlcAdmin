@@ -27,13 +27,11 @@ export class ListeUtilisateursPage extends ListeFrmSqlModelePage
     this.exposants = [] ;
   }
 
+
+// ngOnInit charge le tableau des elements de la requête SQL lorsque la page se charge
   ngOnInit()
   {
     this.select( "SELECT * FROM UTILISATEURS_18 order by nom", [] ) ;
-
-    //let sql = "select id, nom from EXPOSANTS_18 " ;
-    //sql += " where id not in( select idExposant from UTILISATEURS_18)" ;
-
     let sql = "select id, nom from exposant_18 order by nom" ;
 
     this.sqlPrd.select( sql, [], this.exposants ) ;

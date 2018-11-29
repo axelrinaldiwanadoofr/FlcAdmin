@@ -21,7 +21,7 @@ export class HomePage
   {
     this.privilege = 0 ;
   }
-
+  // Permet a l'utilisateur de se connecter
   onConnecter()
   {
     this.jetonConnect.connect( this.compte, this.mdp ).then( (result)=>

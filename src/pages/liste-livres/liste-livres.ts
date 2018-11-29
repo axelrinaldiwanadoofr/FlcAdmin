@@ -28,7 +28,7 @@ export class ListeLivresPage extends ListeSqlModelePage
 
             this.select( select, [] ) ;
     }
-
+    // encore une fois, une fonction qui vient de ListeSqlModelePage qui permet de gerer l'après ajout d'un objet
     onAfterNewItem( object: MoLivre )
     {
         object.idExposant = this.idExposant ;

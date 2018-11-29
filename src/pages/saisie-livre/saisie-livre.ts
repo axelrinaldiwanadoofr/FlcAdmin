@@ -23,7 +23,7 @@ export class SaisieLivrePage extends FrmSqlModelePage
     public object:    MoLivre;
     public tranchesAge: Array<{id: number, libelle: string}> ;
     public themes: Array<{id: number, libelle: string}> ;
-
+    // Le constructeur initialise les listes a vide et les remplies avec la requête SQL.
     constructor(
         public navCtrl: NavController,
         public navParams: NavParams,
@@ -33,8 +33,7 @@ export class SaisieLivrePage extends FrmSqlModelePage
             super( navCtrl, navParams, sqlPrd, toastCtrl, new MoLivre() )
 
             this.tranchesAge = [] ;
-            this.sqlPrd.select( "select id, libelle from trancheage_18 order by id", [], this.tranchesAge ) ;        
-
+            this.sqlPrd.select( "select id, libelle from trancheage_18 order by id", [], this.tranchesAge ) ;
             this.themes = [] ;
             this.sqlPrd.select( "select id, libelle from theme_18 order by libelle", [], this.themes ) ;        
         }
