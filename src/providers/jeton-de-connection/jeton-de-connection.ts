@@ -40,7 +40,7 @@ export class JetonDeConnectionProvider
 
   connect( compte: string, password: string ): Promise<any>
   {
-    return this.sqlPrd.select( "select nom, privilege, id, idExposant from UTILISATEURS_18 where compte=? and mdp=?",
+    return this.sqlPrd.select( "select nom, privilege, id, idExposant from utilisateurs_18 where compte=? and mdp=?",
       [compte,password] ).then( (data)=>
       {
         if( data.rows.length > 0 )

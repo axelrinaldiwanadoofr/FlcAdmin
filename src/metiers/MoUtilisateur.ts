@@ -26,7 +26,7 @@ export class MoUtilisateur extends MoSqlTable
 
   public getTableName(): string
   {
-    return "UTILISATEURS_18" ; 
+    return "utilisateurs_18" ; 
   }
 
   public getPk(): Array<string>

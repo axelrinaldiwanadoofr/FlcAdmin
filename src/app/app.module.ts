@@ -92,10 +92,9 @@ export class AppModule
   constructor()
   {
     // Specifie l'URL pour l'accès à la base de donnée 
-    RemoteSqlProvider.setWebSqlApiUrl( "http://www.lcs.alsace/flc/php" ) ;
-    //RemoteSqlProvider.setWebSqlApiUrl( "http://localhost/bd" ) ;
+    RemoteSqlProvider.setWebSqlApiUrl( "http://www.fldc.fr/php" ) ;
     
     // Specifie le nom de la base de donnée à consulter
-    RemoteSqlProvider.setWebDbNameAndId( "lcsalsacggroot", 0 ) ;
+    RemoteSqlProvider.setWebDbNameAndId( "fldc_bd", 0 ) ;
   }
 }
