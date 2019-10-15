@@ -37,17 +37,17 @@
     </ion-item>
     <ion-item>
       <ion-label color="primary">Commentaire: </ion-label>
-      <ion-textarea rows="5" [(ngModel)]="object.commentaire" (input)="change()">{{leResume}}</ion-textarea>
+      <ion-textarea rows="5" [(ngModel)]="object.commentaire">{{commentaire}}</ion-textarea>
     </ion-item>
     <ion-item>
       <ion-label color="primary">Résumé du livre: </ion-label>
-      <ion-textarea rows="5" [(ngModel)]="object.enResume" (input)="change()">{{leResume}}</ion-textarea>
+      <ion-textarea rows="5" [(ngModel)]="object.enResume">{{enResume}}</ion-textarea>
     </ion-item>
     <ion-item>
       <upload-image 
         [show-size-list]="'false'" 
         [(imageUrl)]="object.image"
-        [uploadSrvUrl]="'http://www.lcs.alsace/flc/php/'"
+        [uploadSrvUrl]="'http://www.fldc.fr/php/'"
         [imageSize]=300
         [imageDirectory]="'../images'"></upload-image>
       <p *ngIf="object.image">

@@ -14,6 +14,10 @@
     
     $filePrefixe = $_POST["filePrefixe"] ;
     $imageDirectory = $_POST["imageDirectory"] ;
+
+    //echo( "<br>fileName " . $fileName ) ;
+    //echo( "<br>fileTmpName " . $fileTmpName ) ;
+    //echo( "<br>fileError " . $fileError ) ;
     
     if( !$fileError )
     {
