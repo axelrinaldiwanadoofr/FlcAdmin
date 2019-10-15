@@ -1,0 +1,20 @@
+https://fldc.fr
+
+L'interface de gestion :
+   URL : https://ns236.evxonline.net:8443/login_up.php
+   Identifiant : fldc
+   Mot de passe : 3mm0F3k&
+
+BD: 
+serveur: localhost:3306
+nom: fldc_bd
+user: fldc
+mp: 3mm0F3k&
+
+https://ns236.evxonline.net:8443/domains/databases/phpMyAdmin/index.php?db=fldc_bd
+
+FTP:
+serveur: 46.105.43.65
+user: fldc
+mdp: 3mm0F3k&
+mode: (passif ou automatique)
