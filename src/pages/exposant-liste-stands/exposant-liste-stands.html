@@ -1,0 +1,28 @@
+<ion-buttons end>
+  <button ion-button icon-only (click)="onNewItem()">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-buttons>    
+
+<tab-form title="Liste des stands">
+  <tab-row *ngFor="let object of liste">
+    <tab-line-selector>
+      <tab-bt-save [object]="object"></tab-bt-save>
+      <tab-bt-cancel [object]="object"></tab-bt-cancel>
+      <tab-bt-remove title="Supprimer" [object]="object" [liste]="liste"></tab-bt-remove>
+    </tab-line-selector>
+    <tab-cell title="N° exposant">
+      {{object.idExposant}}
+    </tab-cell>
+    <tab-cell title="N° de stand">
+      <input type="text" [(ngModel)]="object.idStand">
+      <!--
+      <select [(ngModel)]="object.idStand">
+        <ion-option *ngFor="let s of stands" value={{s.id}}>
+          {{s.id}} {{s.hall}}
+        </ion-option>
+      </select>
+      -->
+    </tab-cell>
+  </tab-row>
+</tab-form>

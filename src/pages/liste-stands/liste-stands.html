@@ -1,0 +1,69 @@
+<!--
+  Generated template for the ListeEquipementsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Liste des stands</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onNewItem()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <div class="lavbox">
+      <div class="lahbox">
+        <label>Recherche par Identifiant:</label>
+        <input type="text" [(ngModel)]="rId" placeholder="n° identifiant" (change)="onFiltre()"/>      
+      </div>
+      <div class="lahbox">
+        <label>Recherche par hall:</label>
+        <select [(ngModel)]="rHall" (change)="onFiltre()">
+          <option value="hall 1">hall 1</option>
+          <option value="hall 2">hall 2</option>
+          <option value="hall 3">hall 3</option>
+          <option value="hall 4">hall 4</option>
+          <option value="hall 5">hall 5</option>
+          <option value="hall 6">hall 6</option>
+        </select>
+      </div>
+    </div>
+    <div class="lavbox">
+      <div class="lahbox">
+          <button ion-button item-end (click)="onFiltre()">Filtrer</button>
+      </div>
+    </div>
+  </ion-card>
+  <tab-form title="Liste des stands">
+    <tab-row *ngFor="let object of liste">
+      <tab-line-selector>
+        <tab-bt-save [object]="object"></tab-bt-save>
+        <tab-bt-cancel [object]="object"></tab-bt-cancel>
+        <tab-bt-remove title="Supprimer" [object]="object" [liste]="liste"></tab-bt-remove>
+      </tab-line-selector>
+      <tab-cell title="N°">{{object.id}}</tab-cell>
+      <tab-cell title="Hall">
+        <select [(ngModel)]="object.hall">
+          <option value="hall 1">hall 1</option>
+          <option value="hall 2">hall 2</option>
+          <option value="hall 3">hall 3</option>
+          <option value="hall 4">hall 4</option>
+          <option value="hall 5">hall 5</option>
+          <option value="hall 6">hall 6</option>
+        </select>
+      </tab-cell>
+    </tab-row>
+  </tab-form>
+</ion-content>

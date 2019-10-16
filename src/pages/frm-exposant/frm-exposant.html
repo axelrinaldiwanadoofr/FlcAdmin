@@ -23,6 +23,9 @@
       <ion-segment-button value="livres">
         Livres
       </ion-segment-button>
+      <ion-segment-button value="stands">
+        Stands
+      </ion-segment-button>
     </ion-segment>
   </div>
   <div [ngSwitch]="onglet">
@@ -66,6 +69,12 @@
     <ion-card *ngSwitchCase="'livres'">
       <div padding>
         <page-liste-livres [idExposant]="object.id"></page-liste-livres>
+      </div>
+    </ion-card>
+
+    <ion-card *ngSwitchCase="'stands'">
+      <div padding>
+        <page-exposant-liste-stands [idExposant]="object.id"></page-exposant-liste-stands>
       </div>
     </ion-card>
   </div>

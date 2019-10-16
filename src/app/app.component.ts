@@ -10,6 +10,7 @@ import { ListeUtilisateursPage } from '../pages/liste-utilisateurs/liste-utilisa
 import { ListeExposantsPage } from '../pages/liste-exposants/liste-exposants' ;
 import { SaisieLivrePage } from '../pages/saisie-livre/saisie-livre';
 import { ListeRDVPage } from '../pages/ListeRDV/ListeRDV';
+import { ListeStandsPage } from '../pages/liste-stands/liste-stands' ;
 
 
 
@@ -35,8 +36,9 @@ export class MyApp {
     this.pages = [
       { title: 'Accueil', component: HomePage, privilegeMin: 0 },
       { title: 'Utilisateurs', component: ListeUtilisateursPage, privilegeMin: 20 },
+      { title: 'Stands', component: ListeStandsPage, privilegeMin: 10 },
       { title: 'Exposants', component: ListeExposantsPage, privilegeMin: 10 },
-      { title:'Rendez-vous', component:ListeRDVPage, privilegeMin:10 }
+      { title: 'Rendez-vous', component:ListeRDVPage, privilegeMin:10 }
     ];
 
   }

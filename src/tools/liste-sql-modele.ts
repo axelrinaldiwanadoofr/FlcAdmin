@@ -31,6 +31,11 @@ export class ListeSqlModelePage
     }) ;
   }
 
+  setModele( object )
+  {
+    this.modeleObject = object ;
+  }
+
   clear()
   {
     this.liste = [] ;
