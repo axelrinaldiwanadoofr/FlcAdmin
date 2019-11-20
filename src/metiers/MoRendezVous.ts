@@ -6,20 +6,32 @@ export class MoRendezVous extends MoSqlTable
   // ce modele permet de gerer les objets Mo. Tous les Mo quelque chose sont des copiés collés
   public id: number ;
   public nom: string ;
-  public nbPlacesMax:number ;
+  public nbMaxPlace:number ;
   public jour:string ;
   public duree:number ;
   public heure:string ;
+  public idStand: number ;
+  public idExposant: number ;
+  public idTypeRdv: number ;
+  public idTrancheAge: number ;
+  public description: string ;
+
 
   constructor( data: any = null ) 
   {
     super( (data)? data : {
         id:null, 
         nom: null,
-        nbPlacesMax: null,
+        nbMaxPlace: 10,
         jour: null,
         duree: null, 
-        heure: null } ) ;
+        heure: null,
+        idStand: null,
+        idExposant: null,
+        idTypeRdv: null,
+        idTrancheAge: null,
+        description: null
+      } ) ;
   }
 
   public getTableName(): string

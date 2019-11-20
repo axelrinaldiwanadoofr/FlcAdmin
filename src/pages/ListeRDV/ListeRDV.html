@@ -11,8 +11,14 @@
    <ion-card>
     <div class="lavbox">
       <div class="lahbox">
+        <label>Recherche par numéro de rdv:</label>
+        <input type="text" [(ngModel)]="rIdRdv" placeholder="n° du rdv" (change)="onFiltre()"/>      
+      </div>
+    </div>
+    <div class="lavbox">
+      <div class="lahbox">
         <label>Recherche par numéro de stand:</label>
-        <input type="text" [(ngModel)]="rId" placeholder="n° du stand" (change)="onFiltre()"/>      
+        <input type="text" [(ngModel)]="rIdStand" placeholder="n° du stand" (change)="onFiltre()"/>      
       </div>
       <div class="lahbox">
         <label>Recherche par nom de rendez-vous:</label>

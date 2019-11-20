@@ -12,20 +12,56 @@
       <ion-input [(ngModel)]="object.nom">{{leNom}}</ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="primary">Numero du stand:</ion-label>
-      <ion-input [(ngModel)]="object.idStand">{{leNumStand}}</ion-input>
-    </ion-item>
+      <ion-label color="primary">Exposant:</ion-label>
+      <ion-select [(ngModel)]="object.idExposant" (ionChange)="onExposantChanged()">
+        <ion-option *ngFor="let e of exposants" value={{e.id}}>
+          {{e.nom}}
+        </ion-option>
+      </ion-select>
+    </ion-item> 
+    <ion-item>
+      <ion-label color="primary">Stand:</ion-label>
+      <ion-select [(ngModel)]="object.idStand">
+        <ion-option *ngFor="let s of stands" value={{s.id}}>
+          {{s.id}}
+        </ion-option>
+      </ion-select>
+    </ion-item> 
     <ion-item>
       <ion-label color="primary">Jour du RDV:</ion-label>
-      <ion-input [(ngModel)]="object.jour">{{leJour}}</ion-input>
+      <ion-select [(ngModel)]="object.jour">
+        <ion-option *ngFor="let j of jours" value={{j.jour}}>
+          {{j.jour}}
+        </ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-label color="primary">Heure du RDV:</ion-label>
-      <ion-input [(ngModel)]="object.heure">{{leHeure}}</ion-input>
+      <ion-input [(ngModel)]="object.heure" placeholder="HH:MM:SS">{{leHeure}}</ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary">Durée du RDV:</ion-label>
-      <ion-input [(ngModel)]="object.duree">{{laDuree}}</ion-input>
+      <ion-input [(ngModel)]="object.duree" placeholder="en minutes">{{laDuree}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Type:</ion-label>
+      <ion-select [(ngModel)]="object.idTypeRdv">
+        <ion-option *ngFor="let t of typeRdvs" value={{t.id}}>
+          {{t.nom}}
+        </ion-option>
+      </ion-select>
+    </ion-item> 
+    <ion-item>
+      <ion-label color="primary">Tranche d'âge:</ion-label>
+      <ion-select [(ngModel)]="object.idTrancheAge">
+        <ion-option *ngFor="let t of trancheAges" value={{t.id}}>
+          {{t.libelle}}
+        </ion-option>
+      </ion-select>
+    </ion-item> 
+    <ion-item>
+      <ion-label color="primary">Description: </ion-label>
+      <ion-textarea rows="5" [(ngModel)]="object.description">{{description}}</ion-textarea>
     </ion-item>
   </ion-list>
 

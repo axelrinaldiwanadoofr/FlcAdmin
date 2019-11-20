@@ -20,7 +20,8 @@ export class ListeRDVPage extends ListeSqlModelePage
 
   private rdv: Array<{id:number,nom:string, nbPlacesMax:number, jour:string, duree:number, heure:string, idExposant:number, idStand:number, idTrancheAge:number}>;
   private lesPersonnes: Array<{id:number,nom:string, prenom:string, fonction:string}>;
-  private rId: number ;
+  private rIdRdv: number ;
+  private rIdStand: number ;
   private rNom: string ;
 
   constructor( 
@@ -49,7 +50,8 @@ export class ListeRDVPage extends ListeSqlModelePage
   {
     let where = "where 1=1" ;
 
-    if( this.rId ) where += " and idStand=" + this.rId ;
+    if( this.rIdRdv ) where += " and id=" + this.rIdRdv ;
+    if( this.rIdStand ) where += " and idStand=" + this.rIdStand ;
     if( this.rNom ) where += " and nom like '%" + this.rNom + "%'" ;
 
     this.liste = [] ;
